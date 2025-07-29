@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reparaciones | CIMA CONNECT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="menu-bar">
+  <a href="index.html">
+    <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
+  </a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a></li>
+      <li><a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a></li>
+      <li><a href="index.html#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a></li>
+      <li><a href="index.html#agenda"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICE</span></a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+</header>
+
+<section class="hero-reparaciones">
+  <img src="reparacionesportada.jpg" alt="Reparaciones CIMA CONNECT">
+  <div class="overlay-hero">
+    <h1><span class="es">Reparaciones para tu hogar</span><span class="en" style="display:none;">Home Repair Services</span></h1>
+    <p><span class="es">Soluciones rápidas, profesionales y seguras para cada rincón de tu hogar.</span><span class="en" style="display:none;">Fast, professional, and safe solutions for every corner of your home.</span></p>
+    <a href="#acordeon" class="btn-empezar"><span class="es">EMPEZAR</span><span class="en" style="display:none;">GET STARTED</span></a>
+  </div>
+</section>
+
+<section id="acordeon" class="acordeon-container">
+
+  <!--  Electricidad -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Electricidad</span><span class="en" style="display:none;">Electricity</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Cambiar focos</span><span class="en">Change light bulbs</span></li>
+        <li><span class="es">Agregar breaker</span><span class="en">Add breaker</span></li>
+        <li><span class="es">Revisión de corto</span><span class="en">Short circuit check</span></li>
+        <li><span class="es">Instalación de abanico</span><span class="en">Fan installation</span></li>
+        <li><span class="es">Panel o subpanel</span><span class="en">Panel or subpanel</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Plomería -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Plomería</span><span class="en">Plumbing</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Fugas en fregadero</span><span class="en">Sink leaks</span></li>
+        <li><span class="es">Cambio de grifo</span><span class="en">Faucet replacement</span></li>
+        <li><span class="es">Reemplazo de inodoro</span><span class="en">Toilet replacement</span></li>
+        <li><span class="es">Destapar regadera</span><span class="en">Unclog shower</span></li>
+        <li><span class="es">Instalación de calentador</span><span class="en">Water heater installation</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Drywall -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Drywall</span><span class="en">Drywall</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Tapar agujeros</span><span class="en">Patch holes</span></li>
+        <li><span class="es">Reemplazar paneles</span><span class="en">Replace panels</span></li>
+        <li><span class="es">Aplicar textura</span><span class="en">Apply texture</span></li>
+        <li><span class="es">Reparar humedad</span><span class="en">Fix moisture damage</span></li>
+        <li><span class="es">Parches por impacto</span><span class="en">Impact patches</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Pintura -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Pintura</span><span class="en">Painting</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Pintura de cuarto completo</span><span class="en">Full room painting</span></li>
+        <li><span class="es">Retocar pintura</span><span class="en">Touch-up paint</span></li>
+        <li><span class="es">Pintar molduras</span><span class="en">Trim & door painting</span></li>
+        <li><span class="es">Sellado previo</span><span class="en">Pre-sealing</span></li>
+        <li><span class="es">Pintura de techos</span><span class="en">Ceiling painting</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Puertas y Ventanas -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Puertas y ventanas</span><span class="en">Doors and Windows</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Ajuste de puerta</span><span class="en">Door adjustment</span></li>
+        <li><span class="es">Cambio de manija</span><span class="en">Handle replacement</span></li>
+        <li><span class="es">Instalación de puerta</span><span class="en">New door install</span></li>
+        <li><span class="es">Sellado de ventana</span><span class="en">Window sealing</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Fence -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Cerca / Fence</span><span class="en">Fence</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Reparar fence</span><span class="en">Fix broken fence</span></li>
+        <li><span class="es">Cambiar tablas</span><span class="en">Replace boards</span></li>
+        <li><span class="es">Ajuste de portón</span><span class="en">Gate adjustment</span></li>
+        <li><span class="es">Pintura o sellado</span><span class="en">Paint/seal fence</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Cine en casa -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Cine en casa</span><span class="en">Home Theater</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Instalación de bocinas</span><span class="en">Speaker installation</span></li>
+        <li><span class="es">Instalación de proyector</span><span class="en">Projector setup</span></li>
+        <li><span class="es">Configuración de audio</span><span class="en">Audio configuration</span></li>
+        <li><span class="es">Cableado oculto</span><span class="en">Hidden wiring</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Cámaras -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Cámaras de seguridad</span><span class="en">Security Cameras</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Instalación de cámaras</span><span class="en">Camera installation</span></li>
+        <li><span class="es">Configuración de app</span><span class="en">App configuration</span></li>
+        <li><span class="es">Ajuste de ángulos</span><span class="en">Angle adjustments</span></li>
+        <li><span class="es">Revisión del sistema</span><span class="en">System check</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+  <!--  Luces decorativas -->
+  <div class="acordeon-item">
+    <button class="acordeon-boton"> <span class="es">Luces decorativas</span><span class="en">Decorative Lights</span></button>
+    <div class="acordeon-contenido">
+      <ul>
+        <li><span class="es">Instalación navideña</span><span class="en">Holiday installation</span></li>
+        <li><span class="es">Luces LED inteligentes</span><span class="en">Smart LED lights</span></li>
+        <li><span class="es">Colocación en techos</span><span class="en">Roof/railing lights</span></li>
+      </ul>
+      <button class="btn-agendar"><span class="es">AGENDAR</span><span class="en">BOOK</span></button>
+    </div>
+  </div>
+
+</section>
+
+<!--  seccion tarjetas -->
+  <section class="porque-elegirnos">
+  <h2>
+    <span class="es">¿Por qué elegirnos?</span>
+    <span class="en" style="display: none;">Why Choose Us?</span>
+  </h2>
+  <div class="ventajas">
+    <div class="ventaja">
+      <span class="es">Respuesta rápida</span>
+      <span class="en" style="display: none;">Fast Response</span>
+    </div>
+    <div class="ventaja">
+      <span class="es">Técnicos certificados</span>
+      <span class="en" style="display: none;">Certified Technicians</span>
+    </div>
+    <div class="ventaja">
+      <span class="es">Herramientas modernas</span>
+      <span class="en" style="display: none;">Modern Tools</span>
+    </div>
+    <div class="ventaja">
+      <span class="es">Soporte 24/7</span>
+      <span class="en" style="display: none;">24/7 Support</span>
+    </div>
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>

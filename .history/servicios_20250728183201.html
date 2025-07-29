@@ -1,0 +1,204 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servicios | CIMA CONNECT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Menú superior reutilizable -->
+<header class="menu-bar">
+  <a href="index.html">
+    <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
+  </a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a></li>
+      <li><a href="index.html#reparaciones"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a></li>
+      <li><a href="index.html#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a></li>
+      <li><a href="index.html#agenda"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICE</span></a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+</header>
+
+
+
+<!-- Contenido de la página de servicios -->
+<section class="seccion-servicios">
+  <div class="section-title-lines">
+    <span class="line"></span>
+    <h2>
+      <span class="es">NUESTROS SERVICIOS</span>
+      <span class="en" style="display: none;">OUR SERVICES</span>
+    </h2>
+    <span class="line"></span>
+  </div>
+
+  <p class="intro-servicios">
+    <span class="es"></span>
+    <span class="en" style="display: none;"></span>
+  </p>
+
+  <section class="acordeon-contenedor">
+  <!-- IZQUIERDA: Acordeón -->
+  <div class="acordeon-columna">
+    <div class="acordeon-item" onclick="mostrarImagen('reparaciones3.jpg')">
+      <button class="acordeon-boton"> Reparaciones del hogar</button>
+      <div class="acordeon-contenido">
+        <p>Realizamos cualquier tipo de reparación dentro del hogar: electricidad, plomería, luces, drywall y más.</p>
+      </div>
+    </div>
+
+    <div class="acordeon-item" onclick="mostrarImagen('categoria3.jpg')">
+      <button class="acordeon-boton"> Casa nueva</button>
+      <div class="acordeon-contenido">
+        <p>Instalamos todo en casas nuevas: desde cableado hasta pintura, iluminación o sistemas de seguridad.</p>
+      </div>
+    </div>
+
+    <div class="acordeon-item" onclick="mostrarImagen('categoria4.jpg')">
+      <button class="acordeon-boton"> Nuevo proyecto</button>
+      <div class="acordeon-contenido">
+        <p>Planificamos y ejecutamos proyectos desde cero. Diseño, permisos, ejecución y entrega final.</p>
+      </div>
+    </div>
+
+    <div class="acordeon-item" onclick="mostrarImagen('categoria5.jpg')">
+      <button class="acordeon-boton"> Continuación de proyecto</button>
+      <div class="acordeon-contenido">
+        <p>¿Te dejaron el trabajo a medias? Lo retomamos con seriedad y compromiso para finalizarlo con calidad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DERECHA: Imagen -->
+  <div class="imagen-columna">
+    <img id="imagen-servicio" src="servicioprin2.gpg.jpg" alt="Vista servicio" />
+  </div>
+</section>
+
+<section class="bloque-reparaciones">
+  <div class="contenido-reparacion">
+    <div class="texto-reparacion">
+      <h2>
+        <span class="es">Reparaciones 24/7 - 365 días al año</span>
+        <span class="en" style="display: none;">24/7 Repairs - 365 Days a Year</span>
+      </h2>
+      <p>
+        <span class="es">¿Tienes una emergencia en tu hogar? Nuestro equipo está listo para atender tu solicitud en tiempo real. Simplemente crea tu ticket desde tu celular y recibe asistencia inmediata.</span>
+        <span class="en" style="display: none;">Got an emergency at home? Our team is ready to handle your request in real time. Just create your service ticket from your phone and get immediate help.</span>
+      </p>
+    </div>
+    <div class="boton-agendar-servicio">
+  <a href="index.html#agenda" class="btn-agendar">
+    <span class="es">AGENDAR SERVICIO</span>
+    <span class="en" style="display: none;">BOOK NOW</span>
+  </a>
+</div>
+
+    <div class="imagen-reparacion">
+      <img src="servicio10.jpg" alt="Celular con ticket de reparación" />
+    </div>
+  </div>
+</section>
+
+<section class="bloque-proceso-construccion">
+  <div class="proceso-izquierda">
+    <img src="servicios2.jpg" alt="Proceso construcción casa" />
+  </div>
+  <div class="proceso-derecha">
+    <h3><span class="es">¿Tienes una idea o sueño para tu casa?</span><span class="en" style="display:none;">Do you have a dream or idea for your home?</span></h3>
+    <p>
+      <span class="es">
+        En CIMA CONNECT guiamos a nuestros clientes paso a paso: desde la primera idea, el diseño y planos, hasta los permisos, construcción y entrega final.
+        Convertimos tu sueño en una realidad concreta, funcional y hermosa.
+      </span>
+      <span class="en" style="display:none;">
+        At CIMA CONNECT we guide our clients step by step: from the initial idea, design and blueprints, to permits, construction and final delivery.
+        We turn your dream into a concrete, functional and beautiful reality.
+      </span>
+    </p>
+    <button class="boton-demostracion">
+      <span class="es">VER EJEMPLO</span>
+      <span class="en" style="display:none;">SEE EXAMPLE</span>
+    </button>
+  </div>
+</section>
+
+
+<!-- BLOQUES PARA VISTA MÓVIL -->
+<section class="servicios-mobile">
+  <!-- Bloque 1 -->
+  <div class="servicio-bloque">
+    <img src="categoria5.jpg" alt="Reparaciones del hogar">
+    <h3><span class="es">Reparaciones del hogar</span><span class="en" style="display:none;">Home Repairs</span></h3>
+    <p>
+      <span class="es">Realizamos cualquier tipo de reparación dentro del hogar: electricidad, plomería, luces, drywall y más.</span>
+      <span class="en" style="display:none;">We carry out all kinds of home repairs: electricity, plumbing, lights, drywall, and more.</span>
+    </p>
+  </div>
+
+  <!-- Bloque 2 -->
+  <div class="servicio-bloque">
+    <img src="categoria3.jpg" alt="Casa nueva">
+    <h3><span class="es">Casa nueva</span><span class="en" style="display:none;">New House</span></h3>
+    <p>
+      <span class="es">Instalamos todo en casas nuevas: desde cableado hasta pintura, iluminación o sistemas de seguridad.</span>
+      <span class="en" style="display:none;">We install everything in new houses: from wiring to painting, lighting, or security systems.</span>
+    </p>
+  </div>
+
+  <!-- Bloque 3 -->
+  <div class="servicio-bloque">
+    <img src="categoria4.jpg" alt="Nuevo proyecto">
+    <h3><span class="es">Nuevo proyecto</span><span class="en" style="display:none;">New Project</span></h3>
+    <p>
+      <span class="es">Planificamos y ejecutamos proyectos desde cero. Diseño, permisos, ejecución y entrega final.</span>
+      <span class="en" style="display:none;">We plan and execute projects from scratch. Design, permits, execution, and final delivery.</span>
+    </p>
+  </div>
+
+  <!-- Bloque 4 -->
+  <div class="servicio-bloque">
+    <img src="categoria5.jpg" alt="Continuación de proyecto">
+    <h3><span class="es">Continuación de proyecto</span><span class="en" style="display:none;">Project Continuation</span></h3>
+    <p>
+      <span class="es">¿Te dejaron el trabajo a medias? Lo retomamos y lo finalizamos con calidad y compromiso.</span>
+      <span class="en" style="display:none;">Left with unfinished work? We pick it up and complete it with quality and commitment.</span>
+    </p>
+  </div>
+</section>
+
+<section class="bloque-industrial">
+  <div class="bloque-industrial-inner">
+  <div class="bloque-video">
+    <!-- Reemplaza 'video.mp4' por el nombre de tu archivo real -->
+    <video controls autoplay muted loop>
+      <source src="video2servicios.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="bloque-texto">
+    <h3>We Build with Purpose</h3>
+    <p>
+      At CIMA CONNECT, we specialize in building residential, commercial, and industrial projects with precision, safety, and vision.
+    </p>
+    <p>
+      Whether it's a modern home, a **retail store, or a **large-scale warehouse, our team brings your blueprint to life — from permits to final inspection.
+    </p>
+    <p>
+      Our expertise guarantees lasting quality, on-time delivery, and full code compliance.
+    </p>
+  </div>
+  </div>
+</section>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
