@@ -4,6 +4,15 @@ function toggleMenu() {
   sidebar.classList.toggle("active");
 }
 
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('show');
+}
+
+
+
+
 // ========== CARRUSEL ==========
 let currentSlide = 0;
 const slides = document.querySelectorAll(".carousel-slide");

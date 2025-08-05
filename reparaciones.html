@@ -7,20 +7,39 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <header class="menu-bar">
   <a href="index.html">
     <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
   </a>
+
+  <!-- Menú visible en escritorio -->
   <nav class="main-nav">
     <ul>
+      <li><a href="index.html"><span class="es">INICIO</span><span class="en" style="display:none;">HOME</span></a></li>
       <li><a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a></li>
       <li><a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a></li>
-      <li><a href="index.html#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a></li>
-      <li><a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICE</span></a></li>
+      <li><a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a></li>
+      <li><a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a></li>
     </ul>
   </nav>
-  <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+
+  <!-- Menú hamburguesa + idioma -->
+  <div class="menu-actions">
+    <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+    <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+  </div>
 </header>
+
+<!-- Menú lateral responsive -->
+<div class="mobile-menu" id="mobileMenu">
+   <a href="index.html"><span class="es">INICIO</span><span class="en" style="display:none;">HOME</span></a>
+  <a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a>
+  <a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a>
+  <a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a>
+  <a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a>
+</div>
+
 
 <section class="hero-reparaciones">
   <img src="reparacionesportada.jpg" alt="Reparaciones CIMA CONNECT">

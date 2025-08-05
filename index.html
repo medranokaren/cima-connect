@@ -8,25 +8,16 @@
 </head>
 <body>
 
-<!-- Menú Superior -->
-<div class="menu-bar">
-  <a href="#top">
-    <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
-  </a>
-  <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
-  <div class="close-icon" onclick="toggleMenu()">✖ Cerrar</div>
-  <div class="lang-switch" onclick="toggleLang()">EN / ES</div>
-</div>
 
-<!-- Menú Superior -->
 <header class="menu-bar">
-  <a href="#top">
+  <a href="index.html">
     <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
   </a>
 
   <!-- Menú visible en escritorio -->
   <nav class="main-nav">
     <ul>
+     
       <li><a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a></li>
       <li><a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a></li>
       <li><a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a></li>
@@ -34,18 +25,24 @@
     </ul>
   </nav>
 
-  <!-- Ícono de menú para móviles -->
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+  <!-- Menú hamburguesa + idioma -->
+  <div class="menu-actions">
+    <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+    <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+  </div>
 </header>
 
-<!-- Menú lateral para móviles -->
+<!-- Menú lateral responsive -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#servicios"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a>
-  <a href="#reparaciones"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a>
+   <a href="index.html"><span class="es">casa</span><span class="en" style="display:none;">Home</span></a>
+  <a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a>
+  <a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a>
   <a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a>
-  <a href="#agenda"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a>
+  <a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a>
 </div>
+
+
+
 
 
       <!-- Sección Hero con fondo de construcción -->
