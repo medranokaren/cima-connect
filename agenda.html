@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar Servicio | CIMA CONNECT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Menú superior reutilizable -->
+<header class="menu-bar">
+  <a href="index.html">
+    <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
+  </a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="servicios.html"><span class="es" style="display:none;">SERVICIOS</span><span class="en">SERVICES</span></a></li>
+      <li><a href="reparaciones.html"><span class="es" style="display:none;">REPARACIONES</span><span class="en">REPAIRS</span></a></li>
+      <li><a href="index.html#proyectos"><span class="es" style="display:none;">NUEVOS PROYECTOS</span><span class="en">NEW PROJECTS</span></a></li>
+      <li><a href="agenda.html"><span class="es" style="display:none;">AGENDAR SERVICIO</span><span class="en">BOOK SERVICE</span></a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
+</header>
+
+<!-- SECCIÓN SUPERIOR CON FORMA DE TRIÁNGULO INVERTIDO -->
+<div class="triangle-header">
+  <div class="triangle-content">
+    <h2 class="es" style="display:none;"></h2>
+    <h2 class="en"></h2>
+  </div>
+</div>
+
+<canvas id="backgroundCanvas"></canvas>
+
+<section class="form-section">
+  <div class="form-card">
+    <h2 class="es" style="display:none;">Queremos servirle de la mejor manera posible</h2>
+    <h2 class="en">We want to serve you in the best way possible</h2>
+
+    <p class="es" style="display:none;">Complete el siguiente formulario, seleccione los servicios que desea cotizar y nos comunicaremos con usted lo más pronto posible.</p>
+    <p class="en">Complete the form below, select the services you want to quote, and we will contact you as soon as possible.</p>
+
+    <h3 class="es" style="display:none;">Crear ticket de servicio</h3>
+    <h3 class="en">Create service ticket</h3>
+
+    <!-- Tipo de servicio -->
+    <div class="service-type-buttons">
+      <button type="button" onclick="showSection('proyecto')"><span class="es" style="display:none;">Nuevo Proyecto</span><span class="en">New Project</span></button>
+      <button type="button" onclick="showSection('reparacion')"><span class="es" style="display:none;">Reparación</span><span class="en">Repair</span></button>
+      <button type="button" onclick="showSection('completo')"><span class="es" style="display:none;">Servicio Completo</span><span class="en">Full Service</span></button>
+    </div>
+
+    <form id="service-form">
+
+      <!-- NUEVO PROYECTO -->
+      <div class="form-section-content" id="proyecto" style="display:none;">
+        <label><span class="es" style="display:none;">Seleccione:</span><span class="en">Select:</span></label>
+        <select>
+          <option><span class="es" ></span><span class="en" style="display: none;">New House</span></option>
+          <option><span class="es" style="display:none;"></span><span class="en">Finishes</span></option>
+          <option><span class="es" style="display:none;"></span><span class="en">Blueprints</span></option>
+        </select>
+        <textarea placeholder="Describe your project"></textarea>
+      </div>
+
+      <!-- REPARACIÓN -->
+      <div class="form-section-content" id="reparacion" style="display:none;">
+        <label><span class="es" style="display:none;">Seleccione el área:</span><span class="en">Select area:</span></label>
+        <select>
+          <option>Plumbing</option>
+          <option>Electricity</option>
+          <option>Drywall</option>
+          <option>Painting</option>
+          <option>Doors & Windows</option>
+          <option>Fence</option>
+          <option>Cameras</option>
+          <option>Home Theater</option>
+          <option>Decorative Lights</option>
+        </select>
+        <input type="text" placeholder="  Describe the issue" />
+      </div>
+
+      <!-- SERVICIO COMPLETO -->
+      <div class="form-section-content" id="completo" style="display:none;">
+        <label><span class="es" style="display:none;">Seleccione uno o más:</span><span class="en">Select one or more:</span></label><br />
+        <label><input type="checkbox" /> <span class="es" style="display:none;">Pintura</span><span class="en">Painting</span></label>
+        <label><input type="checkbox" /> <span class="es" style="display:none;">Limpieza</span><span class="en">Cleaning</span></label>
+        <label><input type="checkbox" /> <span class="es" style="display:none;">Luces decorativas</span><span class="en">Decorative Lights</span></label>
+        <label><input type="checkbox" /> <span class="es" style="display:none;">Cámaras</span><span class="en">Cameras</span></label>
+        <label><input type="checkbox" /> <span class="es" style="display:none;">Cine en casa</span><span class="en">Home Theater</span></label>
+        <label><input type="checkbox" /> Fence</label>
+      </div>
+
+      <!-- DATOS PERSONALES -->
+      <h4 class="es" style="display:none;">Tus datos</h4>
+      <h4 class="en">Your Information</h4>
+
+      <input type="text" placeholder=" Full name" required />
+      <input type="tel" placeholder=" Phone" required />
+      <input type="email" placeholder=" Email" required />
+      <input type="text" placeholder="Full address" required />
+
+      <button type="submit" class="btn-enviar">
+        <span class="es" style="display:none;">Enviar solicitud</span>
+        <span class="en">Submit request</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="es">© 2025 CIMA CONNECT. Todos los derechos reservados.</p>
+    <p class="en" style="display: none;">© 2025 CIMA CONNECT. All rights reserved.</p>
+
+    <p>
+      <a href="agenda.html" class="footer-link">
+        <span class="es">Contáctanos</span>
+        <span class="en" style="display: none;">Contact us</span>
+      </a>
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

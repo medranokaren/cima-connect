@@ -1,24 +1,25 @@
- // Mostrar/Ocultar menú lateral
+ // ========== MENÚ LATERAL ==========
 function toggleMenu() {
-  const sidebar = document.getElementById("sidebar");
+  const sidebar = document.getElementById("sidebar") || document.getElementById("mobileMenu");
   sidebar.classList.toggle("active");
 }
 
-// Cambiar idioma ES/EN
-function toggleLang() {
-  const spanishElements = document.querySelectorAll(".es");
-  const englishElements = document.querySelectorAll(".en");
+// ========== CARRUSEL ==========
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-slide");
 
-  spanishElements.forEach(el => {
-    el.style.display = (el.style.display === "none") ? "inline" : "none";
-  });
-
-  englishElements.forEach(el => {
-    el.style.display = (el.style.display === "none") ? "inline" : "none";
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
   });
 }
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 5000);
 
-// Mostrar submenú
+// ========== SUBMENÚ ==========
 function openSubMenu(id) {
   document.querySelectorAll(".submenu, .subsubmenu").forEach(el => {
     el.style.display = "none";
@@ -26,7 +27,6 @@ function openSubMenu(id) {
   document.getElementById(id).style.display = "block";
 }
 
-// Volver al submenú anterior
 function goBack() {
   document.querySelectorAll(".submenu, .subsubmenu").forEach(el => {
     el.style.display = "none";
@@ -34,266 +34,151 @@ function goBack() {
   document.getElementById("repairs").style.display = "block";
 }
 
-// Volver a menú específico
 function goBackTo(id) {
   document.querySelectorAll(".submenu, .subsubmenu").forEach(el => {
     el.style.display = "none";
   });
   document.getElementById(id).style.display = "block";
 }
-let currentSlide = 0;
-const slides = document.querySelectorAll(".carousel-slide");
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) {
-      slide.classList.add("active");
-    }
+// ========== ACORDEÓN ==========
+document.querySelectorAll('.acordeon-boton').forEach((boton) => {
+  boton.addEventListener('click', function () {
+    const item = this.parentElement;
+    const estaActivo = item.classList.contains('activo');
+    document.querySelectorAll('.acordeon-item').forEach((i) => i.classList.remove('activo'));
+    if (!estaActivo) item.classList.add('activo');
+  });
+});
+
+// ========== CAMBIO DE IDIOMA ==========
+// 1. Mostrar inglés por defecto al cargar
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.es').forEach((el) => el.style.display = 'none');
+  document.querySelectorAll('.en').forEach((el) => el.style.display = 'inline');
+});
+
+// 2. Función para alternar idioma manualmente
+function toggleLang() {
+  const isSpanish = document.querySelector('.es').style.display !== 'none';
+  document.querySelectorAll('.es').forEach((el) => {
+    el.style.display = isSpanish ? 'none' : 'inline';
+  });
+  document.querySelectorAll('.en').forEach((el) => {
+    el.style.display = isSpanish ? 'inline' : 'none';
   });
 }
 
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 5000);
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("active");
+// ========== EFECTO SCROLL MOBILE ==========
+function mostrarBloquesScroll() {
+  const bloques = document.querySelectorAll('.servicio-bloque');
+  const trigger = window.innerHeight * 0.85;
+  bloques.forEach((bloque) => {
+    const top = bloque.getBoundingClientRect().top;
+    if (top < trigger) bloque.classList.add('visible');
+  });
 }
+window.addEventListener('scroll', mostrarBloquesScroll);
+window.addEventListener('load', mostrarBloquesScroll);
 
+// ========== EFECTO ENTRADA SLIDE ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const slideSections = document.querySelectorAll(".slide-in-section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.isIntersecting
+        ? entry.target.classList.add("visible")
+        : entry.target.classList.remove("visible");
+    });
+  }, { threshold: 0.2 });
+  slideSections.forEach(section => observer.observe(section));
+});
 
+// ========== EFECTO DE CUADROS ENTRANDO ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const featureBoxes = document.querySelectorAll(".feature-box");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.isIntersecting
+        ? entry.target.classList.add("visible")
+        : entry.target.classList.remove("visible");
+    });
+  }, { threshold: 0.2 });
+  featureBoxes.forEach(box => observer.observe(box));
+});
 
-
-
-
-
-
-
-
-
- 
-
-
-
+// ========== IMAGEN SERVICIO ==========
 function mostrarImagen(imagen) {
   document.getElementById("imagen-servicio").src = imagen;
 }
-// Funcionalidad de acordeón
-document.querySelectorAll('.acordeon-boton').forEach((boton) => {
-  boton.addEventListener('click', function () {
-    const item = this.parentElement;
-    const estaActivo = item.classList.contains('activo');
 
-    // Cierra todos los items
-    document.querySelectorAll('.acordeon-item').forEach((i) => {
-      i.classList.remove('activo');
-    });
-
-    // Abre solo el que se clickeó (si no estaba abierto)
-    if (!estaActivo) {
-      item.classList.add('activo');
-    }
+// ========== REDIRECCIÓN BOTONES AGENDAR ==========
+document.querySelectorAll('.btn-agendar').forEach(button => {
+  button.addEventListener('click', () => {
+    window.location.href = 'agenda.html';
   });
 });
 
-// Cambio de imagen
-function mostrarImagen(src) {
-  document.getElementById('imagen-servicio').src = src;
+// ========== CAMBIO DE SECCIÓN EN AGENDA ==========
+function showSection(sectionId) {
+  ['proyecto', 'reparacion', 'completo'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  document.getElementById(sectionId).style.display = 'block';
 }
 
+// ========== CANVAS DE PUNTITOS ==========
+const canvas = document.getElementById("backgroundCanvas");
+const ctx = canvas.getContext("2d");
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
+let particlesArray = [];
 
-
-
-// ========== CAMBIO DE IDIOMA ========== //
-function toggleLang() {
-  const isSpanish = document.querySelector('.es').style.display !== 'none';
-
-  document.querySelectorAll('.es').forEach((el) => {
-    el.style.display = isSpanish ? 'none' : 'inline';
-  });
-
-  document.querySelectorAll('.en').forEach((el) => {
-    el.style.display = isSpanish ? 'inline' : 'none';
-  });
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 1;
+    this.speedX = Math.random() * 0.5 - 0.25;
+    this.speedY = Math.random() * 0.5 - 0.25;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+  }
+  draw() {
+    ctx.fillStyle = "#183471ff";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
 
-// ========== EFECTO SCROLL EN MÓVIL ========== //
-function mostrarBloquesScroll() {
-  const bloques = document.querySelectorAll('.servicio-bloque');
-  const trigger = window.innerHeight * 0.85;
-
-  bloques.forEach((bloque) => {
-    const top = bloque.getBoundingClientRect().top;
-    if (top < trigger) {
-      bloque.classList.add('visible');
-    }
-  });
+function initParticles() {
+  particlesArray = [];
+  for (let i = 0; i < 120; i++) {
+    particlesArray.push(new Particle());
+  }
 }
 
-window.addEventListener('scroll', mostrarBloquesScroll);
-window.addEventListener('load', mostrarBloquesScroll);
-
-// Funcionalidad de acordeón
-document.querySelectorAll('.acordeon-boton').forEach((boton) => {
-  boton.addEventListener('click', function () {
-    const item = this.parentElement;
-    const estaActivo = item.classList.contains('activo');
-
-    // Cierra todos los items
-    document.querySelectorAll('.acordeon-item').forEach((i) => {
-      i.classList.remove('activo');
-    });
-
-    // Abre solo el que se clickeó (si no estaba abierto)
-    if (!estaActivo) {
-      item.classList.add('activo');
-    }
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particlesArray.forEach(p => {
+    p.update();
+    p.draw();
   });
+  requestAnimationFrame(animateParticles);
+}
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
 });
 
-// Cambio de idioma (opcional, si tienes botón de idioma con id="langToggle")
-const langToggle = document.getElementById('langToggle');
-
-if (langToggle) {
-  langToggle.addEventListener('click', () => {
-    const isSpanish = document.querySelector('.es').style.display !== 'none';
-
-    document.querySelectorAll('.es').forEach((el) => {
-      el.style.display = isSpanish ? 'none' : 'inline';
-    });
-
-    document.querySelectorAll('.en').forEach((el) => {
-      el.style.display = isSpanish ? 'inline' : 'none';
-    });
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ========== ACORDEÓN (pagina reparaciones) ========== //
-document.querySelectorAll('.acordeon-boton').forEach((boton) => {
-  boton.addEventListener('click', function () {
-    const item = this.parentElement;
-    const estaActivo = item.classList.contains('activo');
-
-    // Cierra todos los items
-    document.querySelectorAll('.acordeon-item').forEach((i) => {
-      i.classList.remove('activo');
-    });
-
-    // Abre solo el que se clickeó (si no estaba abierto)
-    if (!estaActivo) {
-      item.classList.add('activo');
-    }
-  });
-});
-
-// ========== CAMBIO DE IDIOMA ========== //
-function toggleLang() {
-  const isSpanish = document.querySelector('.es').style.display !== 'none';
-
-  document.querySelectorAll('.es').forEach((el) => {
-    el.style.display = isSpanish ? 'none' : 'inline';
-  });
-
-  document.querySelectorAll('.en').forEach((el) => {
-    el.style.display = isSpanish ? 'inline' : 'none';
-  });
-}
-
-// ========== EFECTO SCROLL EN MÓVIL ========== //
-function mostrarBloquesScroll() {
-  const bloques = document.querySelectorAll('.servicio-bloque');
-  const trigger = window.innerHeight * 0.85;
-
-  bloques.forEach((bloque) => {
-    const top = bloque.getBoundingClientRect().top;
-    if (top < trigger) {
-      bloque.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', mostrarBloquesScroll);
-window.addEventListener('load', mostrarBloquesScroll);
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const featureBoxes = document.querySelectorAll(".feature-box");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      } else {
-        entry.target.classList.remove("visible"); // Para que se pueda animar de nuevo
-      }
-    });
-  }, {
-    threshold: 0.2 // Se activa cuando el 20% del elemento es visible
-  });
-
-  featureBoxes.forEach(box => {
-    observer.observe(box);
-  });
-});
-
-
-
-// ========== EFECTO ENTRADA CON SCROLL (slide desde la derecha) ==========
-document.addEventListener("DOMContentLoaded", function () {
-  const slideSections = document.querySelectorAll(".slide-in-section");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      } else {
-        entry.target.classList.remove("visible");
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-
-  slideSections.forEach(section => {
-    observer.observe(section);
-  });
-});
+initParticles();
+animateParticles();

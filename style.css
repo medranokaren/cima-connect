@@ -1467,3 +1467,356 @@ body {
   padding: 20px;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+/* Reset básico */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fuente general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3f6fb;
+  color: #333;
+}
+
+/* Contenedor principal */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* Tarjeta blanca */
+.form-card {
+  background: #fff;
+  padding: 60px 50px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  max-width: 750px;
+  width: 100%;
+}
+/* Títulos jerarquizados */
+.form-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #004080;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.form-card p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.form-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 12px;
+
+}
+
+
+/* Botones para seleccionar tipo de servicio */
+.service-type-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.service-type-buttons button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  min-width: 140px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.service-type-buttons button:hover {
+  background-color: #0059b3;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Botón de enviar */
+.btn-enviar {
+  background-color: #007acc;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background-color: #005fa3;
+}
+
+/* Checkbox */
+label {
+  display: inline-block;
+  margin: 8px 10px 8px 0;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Responsive para móviles */
+@media screen and (max-width: 600px) {
+  .form-card {
+    padding: 40px 20px;
+  }
+
+  .service-type-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-type-buttons button {
+    width: 100%;
+  }
+}
+
+
+
+/* ESTILO MODERNO PARA TEXTOS */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #2e2e2e;
+}
+
+/* TÍTULOS PRINCIPALES */
+.form-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #002855;
+  margin-bottom: 10px;
+}
+
+/* Párrafos */
+.form-card p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Subtítulos */
+.form-card h3,
+.form-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+/* INPUTS Y TEXTAREAS */
+form input,
+form textarea,
+form select {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #333;
+  letter-spacing: 0.3px;
+  padding: 10px 14px;
+}
+
+/* PLACEHOLDERS */
+form input::placeholder,
+form textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* BOTÓN SUBMIT CON ESTILO MÁS ESTÉTICO */
+.btn-enviar {
+  background-color: #004080;
+  font-size: 15px;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #005bb5;
+  transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.agenda-form-section {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 300px;
+  pointer-events: none; /*  Esta línea evita que el canvas interfiera con clics */
+}
+
+
+
+.triangle-header {
+  position: relative;
+  background-color: #004080; /* Cambia el color según tu diseño */
+  height: 180px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  overflow: hidden;
+  
+}
+
+.triangle-content {
+  position: relative;
+  z-index: 2;
+}
+
+.triangle-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-right: 100vw solid transparent;
+  border-top: 60px solid #f9f9f9; /* Debe coincidir con el fondo del formulario */
+  z-index: 1;
+}
+
+
+
+
+
+/* FOOTER */
+.site-footer {
+  background-color: #004080;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.site-footer .footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.site-footer .footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.site-footer .footer-link:hover {
+  color: #cce6ff;
+}
