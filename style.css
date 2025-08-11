@@ -142,8 +142,8 @@ body {
 .hero-button {
   display: inline-block;
   margin-top: 20px;
-  background-color: #5f659b;
-  color: black;
+  background-color: #0f1550;
+  color: rgb(248, 244, 244);
   font-weight: bold;
   padding: 12px 25px;
   border-radius: 5px;
@@ -152,7 +152,7 @@ body {
 }
 
 .hero-button:hover {
-  background-color: #e7e2df;
+  background-color: #f7f6f5;
 }
 .hero-carousel {
   position: relative;
@@ -196,9 +196,9 @@ body {
 
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(122, 113, 113, 0.6);
   padding: 20px;
-  color: white;
+  color: rgb(246, 245, 245);
   height: 100%;
   width: 100%;
   padding: 0 20px;
@@ -214,8 +214,8 @@ body {
   .hero-button {
   display: inline-block;
   margin-top: 20px;
-  background-color: #5f659b;
-  color: black;
+  background-color: #0a1048;
+  color: rgb(250, 248, 248);
   font-weight: bold;
   padding: 12px 25px;
   border-radius: 5px;
@@ -224,7 +224,7 @@ body {
 }
 
 .hero-button:hover {
-  background-color: #e7e2df;
+  background-color: #4e69a5;
 }
 /* Categorías */
 .categorias {
@@ -1862,31 +1862,59 @@ form textarea::placeholder {
 
 
 
-/* FOOTER */
 .site-footer {
-  background-color: #004080;
+  background-color: white;
   color: white;
-  padding: 30px 20px;
-  text-align: center;
-  margin-top: 60px;
-}
-
-.site-footer .footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.site-footer p {
-  margin: 10px 0;
+  padding: 40px 20px;
   font-size: 14px;
 }
 
-.site-footer .footer-link {
-  color: #ffffff;
-  text-decoration: underline;
-  font-weight: 500;
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.site-footer .footer-link:hover {
-  color: #cce6ff;
+.footer-logo img {
+  width: 200px;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333030;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: #242222;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #1f1c1c;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #aaa;
 }
