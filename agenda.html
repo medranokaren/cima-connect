@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,14 +8,10 @@
 </head>
 <body>
 
-
-
 <header class="menu-bar">
   <a href="index.html">
     <img src="logo5.jpg" alt="CIMA CONNECT Logo" class="logo-header">
   </a>
-
-  <!-- Menú visible en escritorio -->
   <nav class="main-nav">
     <ul>
       <li><a href="index.html"><span class="es">INICIO</span><span class="en" style="display:none;">HOME</span></a></li>
@@ -25,25 +21,20 @@
       <li><a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a></li>
     </ul>
   </nav>
-
-  <!-- Menú hamburguesa + idioma -->
   <div class="menu-actions">
     <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
     <div class="lang-switch" onclick="toggleLang()">ES / EN</div>
   </div>
 </header>
 
-<!-- Menú lateral responsive -->
 <div class="mobile-menu" id="mobileMenu">
-   <a href="index.html"><span class="es">INICIO</span><span class="en" style="display:none;">HOME</span></a>
-  <a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a>
-  <a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a>
-  <a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a>
-  <a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a>
+    <a href="index.html"><span class="es">INICIO</span><span class="en" style="display:none;">HOME</span></a>
+    <a href="servicios.html"><span class="es">SERVICIOS</span><span class="en" style="display:none;">SERVICES</span></a>
+    <a href="reparaciones.html"><span class="es">REPARACIONES</span><span class="en" style="display:none;">REPAIRS</span></a>
+    <a href="#proyectos"><span class="es">NUEVOS PROYECTOS</span><span class="en" style="display:none;">NEW PROJECTS</span></a>
+    <a href="agenda.html"><span class="es">AGENDAR SERVICIO</span><span class="en" style="display:none;">BOOK SERVICES</span></a>
 </div>
 
-
-<!-- SECCIÓN SUPERIOR CON FORMA DE TRIÁNGULO INVERTIDO -->
 <div class="triangle-header">
   <div class="triangle-content">
     <h2 class="es" style="display:none;"></h2>
@@ -57,130 +48,51 @@
   <div class="form-card">
     <h2 class="es" style="display:none;">Queremos servirle de la mejor manera posible</h2>
     <h2 class="en">We want to serve you in the best way possible</h2>
-
     <p class="es" style="display:none;">Complete el siguiente formulario, seleccione los servicios que desea cotizar y nos comunicaremos con usted lo más pronto posible.</p>
     <p class="en">Complete the form below, select the services you want to quote, and we will contact you as soon as possible.</p>
-
     <h3 class="es" style="display:none;">Crear ticket de servicio</h3>
     <h3 class="en">Create service ticket</h3>
-
-    <!-- Tipo de servicio -->
-    <div class="service-type-buttons">
-      <button type="button" onclick="showSection('proyecto')"><span class="es" style="display:none;">Nuevo Proyecto</span><span class="en">New Project</span></button>
-      <button type="button" onclick="showSection('reparacion')"><span class="es" style="display:none;">Reparación</span><span class="en">Repair</span></button>
-      <button type="button" onclick="showSection('completo')"><span class="es" style="display:none;">Servicio Completo</span><span class="en">Full Service</span></button>
-    </div>
-
+    
+    <!-- === INICIO DEL FORMULARIO MODIFICADO === -->
     <form id="service-form">
 
-      <!-- NUEVO PROYECTO -->
-      <div class="form-section-content" id="proyecto" style="display:none;">
-        <label><span class="es" style="display:none;">Seleccione:</span><span class="en">Select:</span></label>
-        <select>
-          <option><span class="es" ></span><span class="en" style="display: none;">New House</span></option>
-          <option><span class="es" style="display:none;"></span><span class="en">Finishes</span></option>
-          <option><span class="es" style="display:none;"></span><span class="en">Blueprints</span></option>
-        </select>
-        <textarea placeholder="Describe your project"></textarea>
-      </div>
-
-      <!-- REPARACIÓN -->
-      <div class="form-section-content" id="reparacion" style="display:none;">
-        <label><span class="es" style="display:none;">Seleccione el área:</span><span class="en">Select area:</span></label>
-        <select>
-          <option>Plumbing</option>
-          <option>Electricity</option>
-          <option>Drywall</option>
-          <option>Painting</option>
-          <option>Doors & Windows</option>
-          <option>Fence</option>
-          <option>Cameras</option>
-          <option>Home Theater</option>
-          <option>Decorative Lights</option>
-        </select>
-        <input type="text" placeholder="  Describe the issue" />
-      </div>
-
-      <!-- SERVICIO COMPLETO -->
-      <div class="form-section-content" id="completo" style="display:none;">
-        <label><span class="es" style="display:none;">Seleccione uno o más:</span><span class="en">Select one or more:</span></label><br />
-        <label><input type="checkbox" /> <span class="es" style="display:none;">Pintura</span><span class="en">Painting</span></label>
-        <label><input type="checkbox" /> <span class="es" style="display:none;">Limpieza</span><span class="en">Cleaning</span></label>
-        <label><input type="checkbox" /> <span class="es" style="display:none;">Luces decorativas</span><span class="en">Decorative Lights</span></label>
-        <label><input type="checkbox" /> <span class="es" style="display:none;">Cámaras</span><span class="en">Cameras</span></label>
-        <label><input type="checkbox" /> <span class="es" style="display:none;">Cine en casa</span><span class="en">Home Theater</span></label>
-        <label><input type="checkbox" /> Fence</label>
-      </div>
+      <!-- DATOS DEL SERVICIO -->
+      <label for="serviceType" class="en">Service Type</label>
+      <label for="serviceType" class="es" style="display:none;">Tipo de Servicio</label>
+      <select id="serviceType" name="serviceType" required>
+        <option value="" disabled selected class="en">-- Select an option --</option>
+        <option value="" disabled selected class="es" style="display:none;">-- Seleccione una opción --</option>
+        <option value="New Project">New Project</option>
+        <option value="Repair">Repair</option>
+        <option value="Full Service">Full Service</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <label for="description" class="en">Describe your request</label>
+      <label for="description" class="es" style="display:none;">Describa su solicitud</label>
+      <textarea id="description" name="description" placeholder="Please provide as much detail as possible..." required></textarea>
 
       <!-- DATOS PERSONALES -->
       <h4 class="es" style="display:none;">Tus datos</h4>
       <h4 class="en">Your Information</h4>
 
-      <input type="text" placeholder=" Full name" required />
-      <input type="tel" placeholder=" Phone" required />
-      <input type="email" placeholder=" Email" required />
-      <input type="text" placeholder="Full address" required />
+      <input type="text" id="clientName" name="clientName" placeholder="Full name" required />
+      <input type="tel" id="clientPhone" name="clientPhone" placeholder="Phone" required />
+      <input type="email" id="clientEmail" name="clientEmail" placeholder="Email" required />
 
       <button type="submit" class="btn-enviar">
         <span class="es" style="display:none;">Enviar solicitud</span>
         <span class="en">Submit request</span>
       </button>
     </form>
+    <!-- === FIN DEL FORMULARIO MODIFICADO === -->
   </div>
 </section>
 
- 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="logo1.jpg" alt="CIMA CONNECT Logo">
-    </div>
-
-    <div class="footer-sections">
-      <div class="footer-section">
-        <h4 class="es">Compañía</h4>
-        <h4 class="en" style="display: none;">Company</h4>
-        <ul>
-          <li><a href="index.html" class="footer-link"><span class="es">Inicio</span><span class="en" style="display: none;">Home</span></a></li>
-          <li><a href="servicios.html" class="footer-link"><span class="es">Servicios</span><span class="en" style="display: none;">Services</span></a></li>
-          <li><a href="reparaciones.html" class="footer-link"><span class="es">Reparaciones</span><span class="en" style="display: none;">Repairs</span></a></li>
-          <li><a href="agenda.html" class="footer-link"><span class="es">Agendar Servicio</span><span class="en" style="display: none;">Book Service</span></a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="es">Legal</h4>
-        <h4 class="en" style="display: none;">Legal</h4>
-        <ul>
-          <li><a href="#" class="footer-link"><span class="es">Política de privacidad</span><span class="en" style="display: none;">Privacy Policy</span></a></li>
-          <li><a href="#" class="footer-link"><span class="es">Términos y condiciones</span><span class="en" style="display: none;">Terms & Conditions</span></a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="es">Contacto</h4>
-        <h4 class="en" style="display: none;">Contact</h4>
-        <ul>
-          <li><a href="agenda.html" class="footer-link"><span class="es">Contáctanos</span><span class="en" style="display: none;">Contact Us</span></a></li>
-          <li><span class="es">Dallas, TX</span><span class="en" style="display: none;">Dallas, TX</span></li>
-          <li><span>info@cimaconnect.com</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p class="es">© 2025 CIMA CONNECT. Todos los derechos reservados.</p>
-      <p class="en" style="display: none;">© 2025 CIMA CONNECT. All rights reserved.</p>
-    </div>
-  </div>
-
-
-
-
+  <!-- El resto de tu footer va aquí, no necesita cambios -->
 </footer>
-
-
 
 <script src="script.js"></script>
 
