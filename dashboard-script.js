@@ -1,5 +1,5 @@
  // URL base de tu API
-const apiBaseUrl = 'https://cimaconnect-cmd9hpf6abcrqngg.westcentralus-01.azurewebsites.net/api/Invoices';
+const apiBaseUrl = 'https://cimaconnect-cmd9hpf6abcrcngq.westcentralus-01.azurewebsites.net/api/Invoices';
 
 // --- Crear Factura ---
 document.getElementById('createInvoiceForm').addEventListener('submit', async function(event) {
