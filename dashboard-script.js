@@ -89,7 +89,7 @@ window.generarLinkPago = async function(invoiceId) {
         });
         const result = await response.json();
         if (result.url) {
-            window.open(result.url, '_blank');
+            window.location.href=result.url;
         } else {
             alert('No se pudo generar el enlace de pago');
         }
