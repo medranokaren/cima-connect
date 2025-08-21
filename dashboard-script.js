@@ -31,6 +31,8 @@ document.getElementById('createInvoiceForm').addEventListener('submit', async fu
         if (response.ok) {
             document.getElementById('creationMessage').textContent = '¡Factura creada con éxito!';
             document.getElementById('createInvoiceForm').reset();
+            // ---> LÍNEA AGREGADA: refresca la lista de facturas
+            loadInvoices();
         } else {
             document.getElementById('creationMessage').textContent = 'Hubo un error al crear la factura.';
         }
@@ -41,7 +43,7 @@ document.getElementById('createInvoiceForm').addEventListener('submit', async fu
 });
 
 // --- Cargar Lista de Facturas ---
-document.getElementById('loadInvoicesBtn').addEventListener('click', async function() {
+async function loadInvoices() {
     try {
         const response = await fetch(apiBaseUrl);
         const invoices = await response.json();
@@ -71,7 +73,13 @@ document.getElementById('loadInvoicesBtn').addEventListener('click', async funct
         alert('Error al cargar la lista de facturas');
         console.error(error);
     }
-});
+}
+
+// Botón "Cargar Facturas"
+document.getElementById('loadInvoicesBtn').addEventListener('click', loadInvoices);
+
+// Al cargar la página automáticamente carga las facturas
+window.onload = loadInvoices;
 
 // --- Generar Link de Pago ---
 window.generarLinkPago = async function(invoiceId) {
