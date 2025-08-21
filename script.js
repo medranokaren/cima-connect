@@ -193,7 +193,7 @@ if (serviceForm) {
 
         // 3. Definir la URL de tu API (¡Asegúrate de que el backend esté ejecutándose!)
         // El puerto (ej: 7081) debe ser el mismo que aparece cuando ejecutas tu proyecto en Visual Studio
-        const apiUrl = 'https://cimaconnect-cmd9hpf6abcrcngq.westcentralus-01.azurewebsites.net/api/Tickets'; 
+        const apiUrl = 'https://cimaconnect-api-prod-gnc5bmc3hjb5gkcd.southcentralus-01.azurewebsites.net/api/Tickets'; 
 
         // 4. Mostrar un mensaje de "Enviando..." al usuario
         const submitButton = serviceForm.querySelector('button[type="submit"]');
