@@ -78,7 +78,7 @@ async function loadInvoices() {
 // Botón "Cargar Facturas"
 document.getElementById('loadInvoicesBtn').addEventListener('click', loadInvoices);
 
-// Al cargar la página automáticamente carga las facturas
+// ---Al cargar la página automáticamente carga las facturas ----
 window.onload = loadInvoices;
 
 // --- Generar Link de Pago ---
