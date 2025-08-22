@@ -10,7 +10,7 @@
     // --- Si llegamos aquí, es porque SÍ hay un token ---
 
     // URL base de tu API (asegúrate que sea la de Azure)
-    const apiBaseUrl = 'https://cimaconnect-api-prod-gnc5bmc3hjb5gkcd.southcentralus-01.azurewebsites.net/api/Invoices';
+    const apiBaseUrl = 'https://cimaconnect-api-prod-gnc5bmc3hjb5gkcd.southcentralus-01.azurewebsites.net/api/Invoices'; 
 
     // --- Crear Factura ---
     const createInvoiceForm = document.getElementById('createInvoiceForm');
@@ -120,4 +120,16 @@
         loadBtn.addEventListener('click', loadInvoices);
     }
     loadInvoices();
+
+    // --- Botón de Cerrar Sesión ---
+const logoutButton = document.getElementById('logout-button');
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        // Borra el token ("llave")
+        localStorage.removeItem('accessToken');
+        // Redirige al usuario a la página de login
+        window.location.href = 'login.html';
+    });
+}
+
 });
