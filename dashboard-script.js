@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     // --- PASO 1: VERIFICACIÓN DE SEGURIDAD ---
     const token = localStorage.getItem('accessToken');
     if (!token) {
@@ -115,4 +115,9 @@
     };
 
     // --- Cargar la lista de facturas al abrir la página ---
-    const loadBtn = document.getElement
+    const loadBtn = document.getElementById('loadInvoicesBtn');
+    if (loadBtn) {
+        loadBtn.addEventListener('click', loadInvoices);
+    }
+    loadInvoices();
+});
