@@ -2,15 +2,12 @@
     // --- PASO 1: VERIFICACIÓN DE SEGURIDAD ---
     const token = localStorage.getItem('accessToken');
     if (!token) {
-        // Si no hay "llave" (token), no te dejamos entrar. Te enviamos a la página de login.
         window.location.href = 'login.html';
-        return; // Detenemos la ejecución del resto del script
+        return;
     }
 
-    // --- Si llegamos aquí, es porque SÍ hay un token ---
-
-    // URL base de tu API (asegúrate que sea la de Azure)
-    const apiBaseUrl = 'https://cimaconnect-api-prod-gnc5bmc3hjb5gkcd.southcentralus-01.azurewebsites.net/api/Invoices'; 
+    // --- URL BASE DE LA API (PARA PRUEBAS LOCALES) ---
+    const apiBaseUrl = 'https://cimarconnect-api-prod-gnc5bmc3hjbsgkcd.southcentralus-01.azurewebsites.net'; 
 
     // --- Crear Factura ---
     const createInvoiceForm = document.getElementById('createInvoiceForm');
@@ -26,11 +23,12 @@
             const invoice = { clientName, clientEmail, serviceDescription, totalAmount: parseFloat(totalAmount), isPaid: false };
 
             try {
-                const response = await fetch(apiBaseUrl, {
+                // ¡CORRECCIÓN! Añadimos la ruta completa /api/Invoices
+                const response = await fetch(`${apiBaseUrl}/api/Invoices`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}` // <--- Usamos la "llave"
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify(invoice)
                 });
@@ -38,7 +36,7 @@
                 if (response.ok) {
                     document.getElementById('creationMessage').textContent = '¡Factura creada con éxito!';
                     createInvoiceForm.reset();
-                    loadInvoices(); // Refrescar la tabla
+                    loadInvoices();
                 } else {
                     document.getElementById('creationMessage').textContent = 'Hubo un error al crear la factura.';
                 }
@@ -52,14 +50,14 @@
     // --- Cargar Lista de Facturas ---
     async function loadInvoices() {
         try {
-            const response = await fetch(apiBaseUrl, {
+            // ¡CORRECCIÓN! Añadimos la ruta completa /api/Invoices
+            const response = await fetch(`${apiBaseUrl}/api/Invoices`, {
                 headers: {
-                    'Authorization': `Bearer ${token}` // <--- Usamos la "llave"
+                    'Authorization': `Bearer ${token}`
                 }
             });
 
             if(response.status === 401) {
-                // Si la llave expiró o es inválida, borramos la llave vieja y enviamos al login
                 localStorage.removeItem('accessToken');
                 window.location.href = 'login.html';
                 return;
@@ -67,7 +65,7 @@
 
             const invoices = await response.json();
             const tbody = document.getElementById('invoicesTableBody');
-            tbody.innerHTML = ''; // Limpiar la tabla
+            tbody.innerHTML = '';
 
             invoices.forEach(inv => {
                 const tr = document.createElement('tr');
@@ -96,15 +94,16 @@
     // --- Generar Link de Pago ---
     window.generarLinkPago = async function(invoiceId) {
         try {
-            const response = await fetch(`${apiBaseUrl}/${invoiceId}/create-checkout-session`, {
+            // ¡CORRECCIÓN! Usamos la ruta correcta del controlador InvoicesController
+            const response = await fetch(`${apiBaseUrl}/api/Invoices/${invoiceId}/create-checkout-session`, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${token}` // <--- Usamos la "llave"
+                    'Authorization': `Bearer ${token}`
                 }
             });
             const result = await response.json();
             if (result.url) {
-                window.location.href = result.url; // Redirección directa para compatibilidad móvil
+                window.location.href = result.url;
             } else {
                 alert('No se pudo generar el enlace de pago');
             }
@@ -122,14 +121,11 @@
     loadInvoices();
 
     // --- Botón de Cerrar Sesión ---
-const logoutButton = document.getElementById('logout-button');
-if (logoutButton) {
-    logoutButton.addEventListener('click', () => {
-        // Borra el token ("llave")
-        localStorage.removeItem('accessToken');
-        // Redirige al usuario a la página de login
-        window.location.href = 'login.html';
-    });
-}
-
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('accessToken');
+            window.location.href = 'login.html';
+        });
+    }
 });
