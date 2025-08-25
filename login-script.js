@@ -3,7 +3,7 @@
     const errorMessage = document.getElementById('error-message');
     
     // URL del endpoint de login de tu API
-    const loginApiUrl = 'https://cimaconnect-api-prod-gnc5bmc3hjb5gkcd.southcentralus-01.azurewebsites.net/login';
+    const loginApiUrl = 'https://cimarconnect-api-prod-gnc5bmc3hjbsgkcd.southcentralus-01.azurewebsites.net';
 
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
